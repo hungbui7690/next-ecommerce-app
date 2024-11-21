@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [productsInfo, setProductsInfo] = useState([])
-  const [searchTerm, setSearchTerm] = useState('') // @
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetch('http://localhost:5000/products')
@@ -16,7 +16,6 @@ export default function Home() {
     ...new Set(productsInfo.map((product) => product.category)),
   ]
 
-  // @
   let products
   if (searchTerm) {
     products = productsInfo.filter((product) =>
@@ -26,24 +25,20 @@ export default function Home() {
 
   return (
     <div className='p-5'>
-      {/* @ search bar */}
       <input
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)} // @
+        onChange={(e) => setSearchTerm(e.target.value)}
         type='text'
         placeholder='Search for products...'
         className='bg-gray-200 w-full py-2 px-4 rounded-xl text-gray-800'
       />
 
-      {/* show categories */}
       {categories.map((category) => (
         <div key={category} className='mt-10'>
-          {/* @ use products.find to hide the empty categories */}
           {products.find((product) => product.category === category) && (
             <div>
               <h2 className='text-2xl capitalize block'>{category}</h2>
               <div className='flex flex-wrap gap-4'>
-                {/* @ change to products */}
                 {products
                   .filter((product) => product.category === category)
                   .map((product) => {

@@ -1,7 +1,10 @@
 /*
-  Search Bar
-  1. app/page.jsx
-  2. components/Product.jsx
+  Footer Navigation & Layout
+  1. app/checkout/page.jsx
+  2. components/Footer.jsx
+  3. components/Layout.jsx
+  3. app/layout.js
+
 
 
 */
