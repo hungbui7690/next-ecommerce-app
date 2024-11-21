@@ -9,7 +9,6 @@
     "lint": "next lint",
     "db": "json-server --watch db.json --port 5000"
   },
-  "type": "module",
   "dependencies": {
     "dotenv": "^16.4.5",
     "json-server": "^1.0.0-beta.3",

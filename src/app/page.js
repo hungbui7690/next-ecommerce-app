@@ -6,7 +6,7 @@ export default function Home() {
       <div className='w-64'>
         <h2 className='text-2xl'>Mobiles</h2>
         {/* Product */}
-        <div className='py-4 shadow-lg rounded-md'>
+        <div className='mt-4 shadow-lg rounded-md bg-slate-800'>
           <div className='w-64'>
             <div className='relative bg-blue-100 w-full h-52'>
               <Image src='/products/iphone.png' alt='Iphone 14 Pro' fill />
