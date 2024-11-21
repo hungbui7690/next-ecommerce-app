@@ -31,6 +31,46 @@
       "picture": "/products/headset.png",
       "description": "lorem ipsum",
       "category": "headphones"
+    },
+    {
+      "id": "5",
+      "name": "Macbook Pro",
+      "price": "2999",
+      "picture": "/products/macbook.png",
+      "description": "lorem ipsum",
+      "category": "laptops"
+    },
+    {
+      "id": "6",
+      "name": "ROG Gaming Laptop",
+      "price": "999",
+      "picture": "/products/rog.png",
+      "description": "lorem ipsum",
+      "category": "laptops"
+    },
+    {
+      "id": "7",
+      "name": "MSI Gaming Laptop",
+      "price": "1299",
+      "picture": "/products/msi.png",
+      "description": "lorem ipsum",
+      "category": "laptops"
+    },
+    {
+      "id": "8",
+      "name": "Huawei Freebuds",
+      "price": "1999",
+      "picture": "/products/freebuds.png",
+      "description": "lorem ipsum",
+      "category": "headphones"
+    },
+    {
+      "id": "9",
+      "name": "Redmi Note 11",
+      "price": "599",
+      "picture": "/products/redmi.png",
+      "description": "lorem ipsum",
+      "category": "mobiles"
     }
   ]
 }

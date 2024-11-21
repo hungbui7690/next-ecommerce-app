@@ -1,31 +1,44 @@
+'use client'
+import Product from '@/components/Product'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [productsInfo, setProductsInfo] = useState([]) // @
+
+  useEffect(() => {
+    fetch('http://localhost:5000/products')
+      .then((res) => res.json())
+      .then((data) => setProductsInfo(data))
+  }, []) // @
+
+  // const categories = productsInfo.map((product) => product.category)
+  // const categories = new Set(productsInfo.map((product) => product.category)) // @ unique values
+  const categories = [
+    ...new Set(productsInfo.map((product) => product.category)),
+  ] // @ convert back to array
+
   return (
     <div className='p-5'>
-      <div className='w-64'>
-        <h2 className='text-2xl'>Mobiles</h2>
-        {/* Product */}
-        <div className='mt-4 shadow-lg rounded-md bg-slate-800'>
-          <div className='w-64'>
-            <div className='relative bg-blue-100 w-full h-52'>
-              <Image src='/products/iphone.png' alt='Iphone 14 Pro' fill />
-            </div>
-            <div className='mt-2'>
-              <h3 className='font-bold text-lg p-2'>Iphone 14 Pro</h3>
-            </div>
-            <p className='text-sm mt-1 leading-4 p-2'>
-              Lorem ipsum, dolor sit amet consectetur adipisicing
-            </p>
-          </div>
-          <div className='flex w-full justify-between items-center px-5 py-3 rounded-xl'>
-            <div className='text-2xl font-bold'>$899</div>
-            <button className='bg-emerald-400 text-white py-1 px-3 rounded-xl'>
-              +
-            </button>
+      {/* @ show categories */}
+      {categories.map((category) => (
+        <div key={category} className='mt-10'>
+          <h2 className='text-2xl capitalize block'>{category}</h2>
+
+          <div className='flex flex-wrap gap-4'>
+            {/* @ show products */}
+            {productsInfo
+              .filter((product) => product.category === category) // filter products by category
+              .map((product) => {
+                return (
+                  <div key={product.id}>
+                    <Product {...product} />
+                  </div>
+                )
+              })}
           </div>
         </div>
-      </div>
+      ))}
     </div>
   )
 }
