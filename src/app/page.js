@@ -7,7 +7,6 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('') // @
 
   useEffect(() => {
-    tes
     fetch('http://localhost:5000/products')
       .then((res) => res.json())
       .then((data) => setProductsInfo(data))
