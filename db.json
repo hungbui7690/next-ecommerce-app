@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Iphone 14 Pro",
+      "price": "1999",
+      "picture": "/products/iphone.png",
+      "description": "lorem ipsum",
+      "category": "mobiles"
+    },
+    {
+      "id": "2",
+      "name": "Airpods Pro",
+      "price": "299",
+      "picture": "/products/airpods.png",
+      "description": "lorem ipsum",
+      "category": "headphones"
+    },
+    {
+      "id": "3",
+      "name": "Galaxy S22",
+      "price": "899",
+      "picture": "/products/galaxy.png",
+      "description": "lorem ipsum",
+      "category": "mobiles"
+    },
+    {
+      "id": "4",
+      "name": "Sony M55 Headsets",
+      "price": "799",
+      "picture": "/products/headset.png",
+      "description": "lorem ipsum",
+      "category": "headphones"
+    }
+  ]
+}
