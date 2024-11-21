@@ -1,6 +1,15 @@
 import Image from 'next/image'
+import { useContext } from 'react'
+import { ProductsContext } from './ProductsContext'
 
 const Product = ({ id, name, price, picture, description }) => {
+  const { setSelectedProducts } = useContext(ProductsContext) // @
+
+  // @
+  const addProduct = (id) => {
+    setSelectedProducts((prev) => [...prev, id])
+  }
+
   return (
     <div key={id} className='w-64'>
       <div className='bg-slate-800 shadow-lg mt-4 rounded-md'>
@@ -15,7 +24,12 @@ const Product = ({ id, name, price, picture, description }) => {
         </div>
         <div className='flex justify-between items-center px-5 py-3 rounded-xl w-full'>
           <div className='font-bold text-2xl'>${price}</div>
-          <button className='bg-emerald-400 px-3 py-1 rounded-xl text-white'>
+
+          {/* @ */}
+          <button
+            onClick={addProduct}
+            className='bg-emerald-400 px-3 py-1 rounded-xl text-white'
+          >
             +
           </button>
         </div>

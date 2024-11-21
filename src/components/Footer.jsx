@@ -1,9 +1,12 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation' // @
+import { usePathname } from 'next/navigation'
+import { useContext } from 'react'
+import { ProductsContext } from './ProductsContext'
 
 export default function Footer() {
-  const pathname = usePathname() // @
+  const pathname = usePathname()
+  const { selectedProducts, setSelectedProducts } = useContext(ProductsContext) // @
 
   return (
     <footer className='bottom-0 sticky flex justify-center space-x-12 border-gray-200 bg-white p-5 border-t w-full text-gray-400'>
@@ -51,7 +54,9 @@ export default function Footer() {
             d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
           />
         </svg>
-        <span>Cart </span>
+
+        {/* @ */}
+        <span>Cart {selectedProducts.length}</span>
       </Link>
     </footer>
   )
